@@ -202,7 +202,9 @@ func create(cmd *cobra.Command, args []string, cf *ChannelCmdFactory) error {
 	if chainID == common.UndefinedParamValue {
 		return errors.New("Must supply channel ID")
 	}
+
 	fmt.Printf("chainID:%v\n", chainID)
+
 	var err error
 	if cf == nil {
 		cf, err = InitCmdFactory(EndorserNotRequired, OrdererRequired)
